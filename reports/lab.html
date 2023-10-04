@@ -7,6 +7,8 @@
 <body>
     <h2>취업 정보 계정 만들기</h2>
     <form action="submit_registration.php" method="post">
+        <h4>*필수 입력 항목</h4>
+        <h4>기본 정보</h4>
         <label for="name">이름*</label>
         <input type="text" id="name" name="name" size="8" required><br><br>
         <label for="email">이메일*</label>
@@ -21,7 +23,7 @@
         <input type="url" id="homepage" name="homepage" size="30" placeholder="http://"><br><br>
         <label for="address">주소*</label>
         <input type="text" id="address" name="address" size="30"><br><br>
-
+        <h4>학 력</h4>
         <label for="school">학교 명*</label>
         <input type="text" id="school" name="school" size="12"><br><br>
         <label for="major">전 공*</label>
@@ -35,6 +37,8 @@
         <label for="graduation_date">졸업(예정)일</label>
         <input type="date" id="graduation_date" name="graduation_date"><br><br>
 
+        <h4>업무 경력</h4>
+
         <label for="company">근무업체명</label>
         <input type="text" id="company" name="company" size="20"><br><br>
         <label for="position">직 위</label>
@@ -44,6 +48,7 @@
         </textarea><br><br>
         <label for="work_years">근무 년수</label>
         <input type="number" id="work_years" name="work_years" min="0" max="10" step="0.5">년<br><br>
+        <h4>자기소개서</h4>
 
         <label for="attachment">첨부 파일</label>
         <input type="file" id="attachment" name="attachment"><br><br>
