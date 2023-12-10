@@ -19,46 +19,56 @@
             </label>
         </div>
         <hr>
-<div class="h3">파스칼 삼각형</div>
-<div class="mb-3">
-    <label class="form-label text-primary"> 삼각형 높이
-        <input type="number" id="size" min="1" max="20" step="1" value="1">
-        <button type="button" class="btn btn-success" onclick="pascals()">그리기</button>
-    </label>
-</div>
-<div class="text-bg-secondary " id="draw_area">
-</div>
-</div>
-   <script>
+        <div class="h3">파스칼 삼각형</div>
+        <div class="mb-3">
+            <label class="form-label text-primary"> 삼각형 높이
+                <input type="number" id="size" min="1" max="20" step="1" value="1">
+                <button type="button" class="btn btn-success" onclick="drawPascals()">그리기</button>
+            </label>
+        </div>
+        <div class="text-bg-secondary " id="draw_area">
+        </div>
+    </div>
+    <script>
         function pascals(numRows) {
             if (numRows === 0)
                 return [];
             if (numRows === 1)
                 return [[1]];
             var result = [];
-            for (var row=1; row<=numRows; row++) {
+            for (var row = 1; row <= numRows; row++) {
                 var arr = [];
-                for (var col=0; col<row; col++) {
-                    if (col===0 || col===row - 1) {
+                for (var col = 0; col < row; col++) {
+                    if (col === 0 || col === row - 1) {
                         arr.push(1);
                     } else {
-                        arr.push((result[row-2][col-1] + result[row-2][col]));
+                        arr.push((result[row - 2][col - 1] + result[row - 2][col]));
                     }
                 }
                 result.push(arr);
             }
             return result;
         }
+
         function draw_triangles(tri) {
-            for (var i=0; i<tri.length; i++) {
-                for (var j=0; j<tri[i].length; j++) {
-                    document.write(tri[i][j] + " ") ;
+            var output = "";
+            for (var i = 0; i < tri.length; i++) {
+                for (var j = 0; j < tri[i].length; j++) {
+                    output += tri[i][j] + " ";
                 }
-                document.write("<br>") ;
+                output += "<br>";
             }
+            return output;
+        }
+
+        function drawPascals() {
+            var height = document.getElementById("size").value;
+            var pascalsTriangle = pascals(height);
+            var drawArea = document.getElementById("draw_area");
+            drawArea.innerHTML = draw_triangles(pascalsTriangle);
         }
     </script>
-</head>
-<body>
+</body>
+</html>
 </body>
 </html>
