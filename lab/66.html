@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  var p;
+function init() {
+p = document.getElementById("msg");
+p.onmouseover = over;
+p.onmouseout = out;
+}
+function over() {
+p.style.backgroundColor = "orchid";
+}
+function out() {
+p.style.backgroundColor = "white";
+} </script>
+<body>
+<h2>mouseover, mouseout 이벤트 처리 예</h2>
+<p id="msg">여기에 마우스를 위치시켜 보세요.</p>
+</body>
+<body onload="init()">
+</body>
